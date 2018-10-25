@@ -268,13 +268,13 @@ class FactionMain extends PluginBase implements Listener {
         $result = $this->db->query("SELECT faction FROM strength ORDER BY power DESC LIMIT 10;");
         $row = array();
         $i = 0;
-        $s->sendMessage(TextFormat::GRAY . "_____." . TextFormat::DARK_GRAY . "[" . TextFormat::DARK_PURPLE . TextFormat::BOLD . "Top 10 Factions" . TextFormat::RESET . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . "._____", true);
+        $s->sendMessage("§l§bFACTION LEADERBOARDS§r", true);
         while ($resultArr = $result->fetchArray(SQLITE3_ASSOC)) {
             $j = $i + 1;
             $cf = $resultArr['faction'];
             $pf = $this->getFactionPower($cf);
             $df = $this->getNumberOfPlayers($cf);
-            $s->sendMessage(TextFormat::BOLD . TextFormat::DARK_PURPLE . "$j. " . TextFormat::RESET . TextFormat::WHITE . "$cf" . TextFormat::GRAY . " |" . TextFormat::LIGHT_PURPLE . " $pf STR" . TextFormat::GRAY . " | " . TextFormat::GREEN . "$df/30" . TextFormat::RESET);
+            $s->sendMessage(TextFormat::BOLD . TextFormat::DARK_PURPLE . "$j. " . TextFormat::RESET . TextFormat::WHITE . "$cf" . TextFormat::GRAY . " |" . TextFormat::LIGHT_PURPLE . " $pf DTR" . TextFormat::GRAY . " | " . TextFormat::GREEN . "$df/30" . TextFormat::RESET);
             $i = $i + 1;
         }
     }
@@ -343,9 +343,9 @@ class FactionMain extends PluginBase implements Listener {
 
             if ($this->prefs->get("EnableOverClaim")) {
                 if ($power_sender < $power_claimedBy) {
-                    $sender->sendMessage($this->formatMessage("This area is aleady claimed by $claimedBy with $power_claimedBy STR. Your faction has $power_sender power. You don't have enough power to overclaim this plot."));
+                    $sender->sendMessage($this->formatMessage("This area is aleady claimed by $claimedBy with $power_claimedBy DTR. Your faction has $power_sender power. You don't have enough power to overclaim this plot."));
                 } else {
-                    $sender->sendMessage($this->formatMessage("This area is aleady claimed by $claimedBy with $power_claimedBy STR. Your faction has $power_sender power. Type /f overclaim to overclaim this plot if you want."));
+                    $sender->sendMessage($this->formatMessage("This area is aleady claimed by $claimedBy with $power_claimedBy DTR. Your faction has $power_sender power. Type /f overclaim to overclaim this plot if you want."));
                 }
                 return false;
             } else {
