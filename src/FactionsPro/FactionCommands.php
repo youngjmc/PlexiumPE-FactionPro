@@ -1176,7 +1176,7 @@ class FactionCommands {
 
                 if (strtolower($args[0]) == "help") {
                     if (!isset($args[1]) || $args[1] == 1) {
-                        $sender->sendMessage(TextFormat::GRAY . "________." . TextFormat::DARK_GRAY . "[" . TextFormat::LIGHT_PURPLE . " HCF Help (1/1) " . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".________");
+                        $sender->sendMessage(TextFormat::GRAY . "________." . TextFormat::DARK_GRAY . "[" . TextFormat::LIGHT_PURPLE . " Faction Help (1/1) " . TextFormat::DARK_GRAY . "]" . TextFormat::GRAY . ".________");
                         $sender->sendMessage(TextFormat::DARK_PURPLE . "/f create " . TextFormat::LIGHT_PURPLE . "[name]" . TextFormat::GRAY . " Create your faction");
                         $sender->sendMessage(TextFormat::DARK_PURPLE . "/f invite " . TextFormat::LIGHT_PURPLE . "[player name]" . TextFormat::GRAY . " Invite a player to your faction");
                         $sender->sendMessage(TextFormat::DARK_PURPLE . "/f claim " . TextFormat::GRAY . "Claim an area");
